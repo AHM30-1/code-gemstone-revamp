@@ -65,23 +65,22 @@ export default function Signup() {
   }
 
   return (
-    <div className="min-h-screen relative overflow-hidden bg-background">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 flex items-center justify-center p-6 relative overflow-hidden">
       {/* Animated Background */}
       <div className="absolute inset-0">
-        {/* Primary gradient mesh */}
-        <div className="absolute inset-0 bg-gradient-mesh opacity-60" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-900/20 via-slate-900/40 to-slate-900" />
         
-        {/* Floating geometric elements */}
+        {/* Floating elements */}
         <motion.div
           animate={{ 
             rotate: 360,
-            scale: [1, 1.1, 1],
+            scale: [1, 1.2, 1],
           }}
           transition={{ 
-            rotate: { duration: 20, repeat: Infinity, ease: "linear" },
-            scale: { duration: 4, repeat: Infinity, ease: "easeInOut" }
+            rotate: { duration: 30, repeat: Infinity, ease: "linear" },
+            scale: { duration: 6, repeat: Infinity, ease: "easeInOut" }
           }}
-          className="absolute top-20 left-20 w-32 h-32 rounded-full bg-gradient-brand opacity-20 blur-xl"
+          className="absolute top-20 left-16 w-32 h-32 rounded-full bg-gradient-to-br from-cyan-500/30 to-purple-500/30 blur-xl"
         />
         <motion.div
           animate={{ 
@@ -90,46 +89,20 @@ export default function Signup() {
           }}
           transition={{ 
             rotate: { duration: 25, repeat: Infinity, ease: "linear" },
-            y: { duration: 6, repeat: Infinity, ease: "easeInOut" }
+            y: { duration: 8, repeat: Infinity, ease: "easeInOut" }
           }}
-          className="absolute top-40 right-32 w-24 h-24 rounded-2xl bg-gradient-accent opacity-25 blur-lg rotate-45"
-        />
-        <motion.div
-          animate={{ 
-            scale: [1, 1.2, 1],
-            rotate: 180,
-          }}
-          transition={{ 
-            scale: { duration: 5, repeat: Infinity, ease: "easeInOut" },
-            rotate: { duration: 15, repeat: Infinity, ease: "linear" }
-          }}
-          className="absolute bottom-32 left-32 w-40 h-40 rounded-full bg-gradient-gold opacity-15 blur-2xl"
-        />
-        <motion.div
-          animate={{ 
-            x: [-10, 10, -10],
-            rotate: 360,
-          }}
-          transition={{ 
-            x: { duration: 4, repeat: Infinity, ease: "easeInOut" },
-            rotate: { duration: 12, repeat: Infinity, ease: "linear" }
-          }}
-          className="absolute bottom-20 right-20 w-28 h-28 rounded-xl bg-brand-accent opacity-30 blur-xl"
+          className="absolute bottom-32 right-20 w-40 h-40 rounded-2xl bg-gradient-to-br from-purple-500/25 to-pink-500/25 blur-2xl"
         />
       </div>
 
-      {/* Geometric patterns */}
-      <div className="absolute inset-0 pattern-dots opacity-10" />
-
-      <div className="relative z-10 flex min-h-screen items-center justify-center p-6">
+      <div className="relative z-10 w-full max-w-md">
         <motion.div
           initial={{ opacity: 0, y: 30, scale: 0.95 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="w-full max-w-md"
         >
           {/* Main Card */}
-          <div className="card-premium backdrop-blur-2xl border border-glass-border/50 shadow-elevated">
+          <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl shadow-2xl p-8">
             {/* Header */}
             <div className="text-center mb-8">
               <motion.div
@@ -143,10 +116,9 @@ export default function Signup() {
                 }}
                 className="relative inline-flex items-center justify-center w-20 h-20 mb-6"
               >
-                <div className="absolute inset-0 bg-gradient-brand rounded-2xl shadow-glow animate-glow" />
+                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500 to-purple-500 rounded-2xl shadow-lg animate-pulse" />
                 <div className="relative flex items-center justify-center w-full h-full">
-                  <Shield className="w-10 h-10 text-primary-foreground drop-shadow-lg" />
-                  <Sparkles className="absolute -top-1 -right-1 w-4 h-4 text-brand-gold animate-pulse" />
+                  <Shield className="w-10 h-10 text-white drop-shadow-lg" />
                 </div>
               </motion.div>
               
@@ -154,7 +126,7 @@ export default function Signup() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5 }}
-                className="text-4xl font-bold bg-gradient-to-r from-foreground to-foreground-secondary bg-clip-text text-transparent mb-2"
+                className="text-4xl font-bold text-white mb-2"
               >
                 Create Account
               </motion.h1>
@@ -162,9 +134,9 @@ export default function Signup() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.6 }}
-                className="text-foreground-muted text-lg"
+                className="text-white/70 text-lg"
               >
-                Join the premium insurance platform
+                Join our premium platform today
               </motion.p>
             </div>
 
@@ -177,7 +149,7 @@ export default function Signup() {
                 transition={{ delay: 0.7 }}
                 className="space-y-2"
               >
-                <label className="text-sm font-medium text-foreground-secondary flex items-center gap-2">
+                <label className="text-sm font-medium text-white/80 flex items-center gap-2">
                   <User className="w-4 h-4" />
                   Full Name
                 </label>
@@ -187,10 +159,10 @@ export default function Signup() {
                     placeholder="Enter your full name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    className="input-premium w-full pl-12 pr-4 py-4 transition-all duration-300 group-hover:shadow-glass focus:shadow-premium"
+                    className="w-full pl-12 pr-4 py-4 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/50 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20 transition-all duration-300"
                     required
                   />
-                  <User className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-brand-primary transition-colors" />
+                  <User className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-cyan-400" />
                 </div>
               </motion.div>
 
@@ -201,7 +173,7 @@ export default function Signup() {
                 transition={{ delay: 0.8 }}
                 className="space-y-2"
               >
-                <label className="text-sm font-medium text-foreground-secondary flex items-center gap-2">
+                <label className="text-sm font-medium text-white/80 flex items-center gap-2">
                   <Mail className="w-4 h-4" />
                   Email Address
                 </label>
@@ -211,10 +183,10 @@ export default function Signup() {
                     placeholder="Enter your email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="input-premium w-full pl-12 pr-4 py-4 transition-all duration-300 group-hover:shadow-glass focus:shadow-premium"
+                    className="w-full pl-12 pr-4 py-4 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/50 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20 transition-all duration-300"
                     required
                   />
-                  <Mail className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-brand-primary transition-colors" />
+                  <Mail className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-cyan-400" />
                 </div>
               </motion.div>
 
@@ -225,7 +197,7 @@ export default function Signup() {
                 transition={{ delay: 0.9 }}
                 className="space-y-2"
               >
-                <label className="text-sm font-medium text-foreground-secondary flex items-center gap-2">
+                <label className="text-sm font-medium text-white/80 flex items-center gap-2">
                   <Lock className="w-4 h-4" />
                   Password
                 </label>
@@ -235,14 +207,14 @@ export default function Signup() {
                     placeholder="Create a strong password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    className="input-premium w-full pl-12 pr-14 py-4 transition-all duration-300 group-hover:shadow-glass focus:shadow-premium"
+                    className="w-full pl-12 pr-14 py-4 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/50 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20 transition-all duration-300"
                     required
                   />
-                  <Lock className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-brand-primary transition-colors" />
+                  <Lock className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-cyan-400" />
                   <button
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
-                    className="absolute right-4 top-1/2 transform -translate-y-1/2 text-foreground-muted hover:text-brand-primary transition-colors"
+                    className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white/60 hover:text-cyan-400 transition-colors"
                   >
                     {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
                   </button>
@@ -253,35 +225,39 @@ export default function Signup() {
                   <motion.div
                     initial={{ opacity: 0, height: 0 }}
                     animate={{ opacity: 1, height: "auto" }}
-                    className="space-y-3 mt-4 p-4 rounded-xl glass border border-glass-border/30"
+                    className="space-y-2 mt-3"
                   >
-                    <div className="grid grid-cols-2 gap-3">
-                      {Object.entries({
-                        hasLength: "8+ characters",
-                        hasUpper: "Uppercase",
-                        hasLower: "Lowercase", 
-                        hasNumber: "Number"
-                      }).map(([key, label]) => (
-                        <motion.div
-                          key={key}
-                          initial={{ scale: 0 }}
-                          animate={{ scale: 1 }}
-                          className="flex items-center gap-2 text-xs"
-                        >
-                          <div className={`w-5 h-5 rounded-full flex items-center justify-center transition-all duration-300 ${
-                            passwordStrength[key as keyof typeof passwordStrength] 
-                              ? 'bg-success text-success-foreground shadow-sm' 
-                              : 'bg-muted border border-border'
-                          }`}>
-                            {passwordStrength[key as keyof typeof passwordStrength] && (
-                              <CheckCircle className="w-3 h-3" />
-                            )}
-                          </div>
-                          <span className={passwordStrength[key as keyof typeof passwordStrength] ? "text-success" : "text-foreground-muted"}>
-                            {label}
-                          </span>
-                        </motion.div>
-                      ))}
+                    <div className="flex items-center gap-2 text-xs">
+                      <CheckCircle
+                        className={`w-4 h-4 transition-colors ${passwordStrength.hasLength ? "text-green-400" : "text-white/40"}`}
+                      />
+                      <span className={`transition-colors ${passwordStrength.hasLength ? "text-green-400" : "text-white/60"}`}>
+                        At least 8 characters
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-2 text-xs">
+                      <CheckCircle
+                        className={`w-4 h-4 transition-colors ${passwordStrength.hasUpper ? "text-green-400" : "text-white/40"}`}
+                      />
+                      <span className={`transition-colors ${passwordStrength.hasUpper ? "text-green-400" : "text-white/60"}`}>
+                        One uppercase letter
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-2 text-xs">
+                      <CheckCircle
+                        className={`w-4 h-4 transition-colors ${passwordStrength.hasLower ? "text-green-400" : "text-white/40"}`}
+                      />
+                      <span className={`transition-colors ${passwordStrength.hasLower ? "text-green-400" : "text-white/60"}`}>
+                        One lowercase letter
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-2 text-xs">
+                      <CheckCircle
+                        className={`w-4 h-4 transition-colors ${passwordStrength.hasNumber ? "text-green-400" : "text-white/40"}`}
+                      />
+                      <span className={`transition-colors ${passwordStrength.hasNumber ? "text-green-400" : "text-white/60"}`}>
+                        One number
+                      </span>
                     </div>
                   </motion.div>
                 )}
@@ -292,9 +268,9 @@ export default function Signup() {
                 <motion.div
                   initial={{ opacity: 0, y: -10, scale: 0.95 }}
                   animate={{ opacity: 1, y: 0, scale: 1 }}
-                  className="p-4 rounded-xl bg-error/10 border border-error/20 backdrop-blur-sm"
+                  className="p-4 rounded-xl bg-red-500/10 border border-red-500/20 backdrop-blur-sm"
                 >
-                  <p className="text-sm text-error font-medium">{error}</p>
+                  <p className="text-sm text-red-400 font-medium">{error}</p>
                 </motion.div>
               )}
 
@@ -307,18 +283,15 @@ export default function Signup() {
                 whileTap={{ scale: 0.98 }}
                 type="submit"
                 disabled={loading}
-                className="btn-premium w-full py-4 rounded-xl font-semibold text-primary-foreground transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3 text-lg"
+                className="w-full py-4 rounded-xl font-semibold text-white bg-gradient-to-r from-cyan-600 to-purple-600 hover:from-cyan-700 hover:to-purple-700 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3 text-lg shadow-lg"
               >
                 {loading ? (
                   <>
-                    <div className="w-5 h-5 border-2 border-primary-foreground/30 border-t-primary-foreground rounded-full animate-spin" />
+                    <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                     Creating Account...
                   </>
                 ) : (
-                  <>
-                    <Star className="w-5 h-5" />
-                    Create Account
-                  </>
+                  "Create Account"
                 )}
               </motion.button>
             </form>
@@ -330,11 +303,11 @@ export default function Signup() {
               transition={{ delay: 1.1 }}
               className="mt-8 text-center"
             >
-              <p className="text-foreground-muted">
+              <p className="text-white/70">
                 Already have an account?{" "}
                 <Link 
                   to="/login" 
-                  className="text-brand-primary font-medium hover:text-brand-accent transition-colors hover:underline"
+                  className="text-cyan-400 font-medium hover:text-cyan-300 transition-colors hover:underline"
                 >
                   Sign In
                 </Link>
@@ -342,16 +315,16 @@ export default function Signup() {
             </motion.div>
           </div>
 
-          {/* Premium Badge */}
+          {/* Trust Badge */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.2 }}
             className="mt-6 text-center"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-brand-primary/20 text-sm text-foreground-muted">
-              <div className="w-2 h-2 rounded-full bg-brand-primary animate-pulse" />
-              Premium Insurance Platform
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-blue-500/20 text-sm text-white/70">
+              <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
+              Trusted & Secure Platform
             </div>
           </motion.div>
         </motion.div>
